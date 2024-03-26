@@ -8,7 +8,7 @@ public class Currency {
     private Integer id;
     private String code;
 
-    @SerializedName("CcyNm_UZ")
+    @SerializedName("Ccy")
     private String shortName;
 
     @SerializedName("Rate")

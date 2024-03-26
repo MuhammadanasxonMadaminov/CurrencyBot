@@ -38,10 +38,7 @@ public class App {
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            String body = response.body();
             Files.writeString(Path.of("currencies.json"),response.body());
-            System.out.println("body = " + body);
-            System.out.println(response.statusCode());
 
         } catch (URISyntaxException | IOException | InterruptedException e) {
             throw new RuntimeException(e);

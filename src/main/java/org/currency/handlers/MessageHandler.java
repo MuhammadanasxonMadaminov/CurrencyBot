@@ -28,34 +28,41 @@ public class MessageHandler implements BaseHandler {
 
         String chatId = update.getMessage().getChatId().toString();
         Message message = update.getMessage();
-        System.out.println(" = " +update);
+        String nickname = update.getMessage().getFrom().getFirstName();
 
-        sendMenu(chatId,message);
+        sendMenu(chatId,message,nickname);
     }
 
-    private void sendMenu(String chatId, Message message) {
+    private void sendMenu(String chatId, Message message, String nickname) {
         String step = Steps.get(chatId);
 
         if(step.equals("main")) {
-            sendMainMenu(chatId);
-        }else if(step.startsWith("second")) {
+            sendMainMenu(chatId,nickname);
+        }else if(step.startsWith("money")) {
             String[] curr =step.split("_");
-            exchangeMenu(chatId,curr[1],curr[2], message);
+            exchangeMenu(chatId,curr[1],curr[2], message,curr[3]);
         }
     }
 
-    private void exchangeMenu(String chatId, String from, String to, Message message) {
+    private void exchangeMenu(String chatId, String from, String to, Message message, String lang) {
         Double money = Double.parseDouble(message.getText());
         Double fromCurr = getRate(from);
+        System.out.println("fromCurr = " + fromCurr);
         Double sum = money * fromCurr;
 
         Double toCurr = getRate(to);
+        System.out.println("toCurr = " + toCurr);
         double result = sum / toCurr;
+        System.out.println("result = " + result);
+        String resultToString = Double.toString(result).split("\\.")[0] + "."
+                + Double.toString(result).split("\\.")[1].substring(0,3);
+        System.out.println("resultToString = " + resultToString);
 
 
         SendMessage sm = new SendMessage();
         sm.setChatId(chatId);
-        sm.setText("Sizning " + money + " " + from + " pulingiz " + result + " " + to + " bo'ladi!");
+        sm.setText(TranslationProps.get(lang,"exchangeMenu1") + money + " " + from + " "
+                + TranslationProps.get(lang,"exchangeMenu2") + " " + resultToString + " " + to + "!");
 
         Steps.set(chatId,"main");
 
@@ -89,10 +96,10 @@ public class MessageHandler implements BaseHandler {
         }
     }
 
-    private void sendMainMenu(String chatId) {
+    private void sendMainMenu(String chatId, String nickname) {
         SendMessage sm = new SendMessage();
         sm.setChatId(chatId);
-        sm.setText(TranslationProps.get("en","greeting"));
+        sm.setText(TranslationProps.get("en","greeting")+ " " + nickname + "! " + "\nWelcome to out Currency bot \nSelect a language:");
 
         sm.setReplyMarkup(getMainInlineKeyboard());
         try {
@@ -104,11 +111,20 @@ public class MessageHandler implements BaseHandler {
 
     private ReplyKeyboard getMainInlineKeyboard() {
         InlineKeyboardMarkup keyboardMarkup = new InlineKeyboardMarkup();
-        InlineKeyboardButton b1 = new InlineKeyboardButton();
-        b1.setText("Get Started");
-        b1.setCallbackData("getStarted");
 
-        keyboardMarkup.setKeyboard(List.of(List.of(b1)));
+        InlineKeyboardButton b1 = new InlineKeyboardButton();
+        b1.setText("UZ \uD83C\uDDFA\uD83C\uDDFF");
+        b1.setCallbackData("uz");
+
+        InlineKeyboardButton b2 = new InlineKeyboardButton();
+        b2.setText("ENG \uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F");
+        b2.setCallbackData("en");
+
+        InlineKeyboardButton b3 = new InlineKeyboardButton();
+        b3.setText("RUS \uD83C\uDDF7\uD83C\uDDFA");
+        b3.setCallbackData("ru");
+
+        keyboardMarkup.setKeyboard(List.of(List.of(b1,b2),List.of(b3)));
         return keyboardMarkup;
     }
 
