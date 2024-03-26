@@ -4,11 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f79297-40d9-40f2-9e8c-38f30669b5b4" name="Changes" comment="" />
+    <list default="true" id="34f79297-40d9-40f2-9e8c-38f30669b5b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/bank.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/bot.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/currencies.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/words_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/words_ru.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/words_uz.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/Properties/BankProps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/Properties/BotProps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/Properties/TranslationProps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/bean/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/bean/Steps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/bot/Bot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/handlers/BaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/handlers/CallbackHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/currency/handlers/MessageHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,12 +57,40 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/user/Downloads/Telegram Desktop/CurrencyConverterBot",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3645084",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My work\Java Backend\1.Java\Projects\Bots\CurrencyApp" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.currency.App" />
+      <module name="CurrencyApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
